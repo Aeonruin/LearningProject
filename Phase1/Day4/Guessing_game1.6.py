@@ -18,10 +18,15 @@ while True:
     if choice == 1:
         difficulty = 100
         max_attempts = 25
-    if choice == 2:
+    elif choice == 2:
         difficulty = 500
         max_attempts = 15
+    else:
+        print("Invalid number. defaulting to Very Hard.")
+        difficulty = 1000
+        max_attempts = 30
     while attempts < max_attempts:
+        print(f"Challenge: {difficulty} Attempts: {max_attempts}")
         guess = int(input("Guess the first number: "))
         if guess == num:
             print("Correct! one more to go!")
@@ -34,7 +39,6 @@ while True:
                     staying = input("Would you like to play again? Y or N: ")
                     if staying == "Y" or "Yes":
                         attempts = 0
-                        continue
                     elif staying == "N" or "No":
                         break
                 if guess2 < num2:
